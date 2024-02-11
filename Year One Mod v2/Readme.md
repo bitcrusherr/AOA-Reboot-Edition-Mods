@@ -1,4 +1,4 @@
-MOD BY KANE MCNASH on steam
+MOD BY KANE MCNASH on steam (https://steamcommunity.com/app/318020/discussions/0/2653116235595886254/?ctp=2)
 
 Hello everyone, taking advantage of my vacations I have created a new iteration of my mod World War, named World War Year One, this new iteration is available at the following link:
 
