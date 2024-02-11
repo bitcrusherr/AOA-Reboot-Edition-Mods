@@ -1,0 +1,862 @@
+A mod for Act of Aggression Reboot
+Here is the list of things modified, indexed and with instructions
+D:\Program Files (x86)\Steam\SteamApps\common\Act of Aggression\Data\ACTOFRUSE\PC
+Folder of current edition: 780095353, open the NDF_Win.dat
+There will be changes in other files but we mostly work with this one
+General
+Colors
+To add more colors first increase in components.ndfbin > TActOfRusePlayerColorHelperResources >NbUsableColorsInFFAMode from 8 to whatever you like up to 29
+Search for components.ndfbin and double-click it, then search for TActOfRusePlayerColor (29)
+Color order B=xx, G=xx, R=xx, A=FF where xx is hexagesimal code
+Modify the first 8 instances, each one with the following colors:
+1. Blueish clear grey:
+#bcb1a9FF
+2. Dark reddish grey:
+#535368FF
+3. Desert Beige:
+#85bbddFF
+4. Dark red:
+#00007aFF
+5. Metallic blue:
+#7c5a43FF
+6. Military green:
+#40685dFF
+7. Very dark grey:
+#2d2d2dFF
+8. Vitamin Orange:
+#0066ffFF
+9. Electric Blue-Violet:
+#851227FF
+10. Plasma Cyan:
+#DAE574FF
+11. Golden Yellow:
+#39C2EEFF
+12. Earthly Brown:
+#6282ACFF
+13. Sky Blue:
+#C17E31FF
+14. White Greyish:
+#F7F7F7FF
+15. Forest Green:
+#228B22FF
+16. Radioactive Green:
+#00FF2FFF
+You can add more colors by editing TActOfRusePlayerColorHelperResources and increasing the Value of NbUSableColorsInFFAMode, it will be the following instances of TActOfRusePlayerColor
+Edited team color into new ones:
+•	Blueish clear grey
+•	Dark reddish grey
+•	Beige
+•	Dark red
+•	Metallic blue
+•	Military green
+•	Very dark grey
+•	Vitamin Orange
+Income
+Banks
+First, we are increasing the money of the banks to 50000, 75000 and 100000 respectively.
+In the NDF_Win.dat search for everything.ndfbin then go to TStockedResourceDescriptionWithParameters
+Look for instances 46600, 46581 and 46557, edit original DefaultAmount for 50000, 75000 and 100000 respectively, also in properties double-click on StockedResourceDescription and change StockLimit.
+Now to make soldiers gather money faster when garrisoned we go for instance 2892, in properties double-click on StockedResourceDescription and edit IncomingRatePerSecond from 10 to 25
+•	Banks now have a stock of 50000, 75000 and 100000 respectively, and garrisoned infantry gathers at 25 credits per second for unit.
+Harvesters
+Inside TStockedResourceDescriptionWithParameters go for Instances 5650, 10997 and 32728, in their properties you will find IncomingRatePerSecond (50), OutgoingRatePerSecond (50) and StockLimit (900), change them for 120, 120 and 1200 respectively
+
+Camera
+In the NDF_Win.dat search for basecamera.ndfbin then go to TIngameCameraMoverAltitudeInfo
+There you edit in properties the SiteMax from -55 to 55 and then edit BackClipping from 23250 to 999999, in each one you select the right top button Copy value to instances
+•	Improved sighting angles of the main camera
+Sight
+In properties of any unit go to Collection > ScannerConfiguration > Default and edit:
+PorteeVisionFOW (14000) 24000
+DetectVision (14000) 24000
+PorteeVision (14000) 24000
+Apply to all land units
+Sight vision for most units improved in 71%
+Cartel
+Units
+Refinery
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for refineries which is 5278, 5279, 5280, 5396, 5417, 5427, 5967, 5995, 6087, 6115, 26354, 34375 and the following one is the right one for Reboot: 26394, 34864
+Construction>Default >ProductionResourcesNeeded (1900) 1000
+Production>Default >ProductionResourcesNeeded (1900) 1000
+KMAX
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for KMAX which is 5406, 5845
+Production>Default >ProductionResourcesNeeded (800) 500
+Contractor
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Contractor which is 2274
+Cost
+In properties go to Collection and edit Production > Default >ProductionResourcesNeeded
+Map (150) 50
+Movement:
+In properties go to Collection and edit MouvementHandler > Default
+MaxSpeed (1050) changed to 2000
+VitesseCombat (1050) changed to 2000
+Viper
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Specter which is 2275 and 2276
+Cost
+In properties go to Collection and edit Production > Default >ProductionResourcesNeeded
+Map (200) 100
+Movement:
+In properties go to Collection and edit MouvementHandler > Default
+MaxSpeed (1050) changed to 2000
+VitesseCombat (1050) changed to 2000
+Grinch
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Specter which is 2277 and 2284
+Cost
+In properties go to Collection and edit Production > Default >ProductionResourcesNeeded
+Map (300) 150
+Movement:
+In properties go to Collection and edit MouvementHandler > Default
+MaxSpeed (1050) changed to 2000
+VitesseCombat (1050) changed to 2000
+Shershen
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Specter which is 2279, 2281, 2282 and 2283
+Cost
+In properties go to Collection and edit Production > Default >ProductionResourcesNeeded
+Map (600) 400
+Movement:
+In properties go to Collection and edit MouvementHandler > Default
+MaxSpeed (1050) changed to 2000
+VitesseCombat (1050) changed to 2000
+Punisher
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Specter which is 2278
+Cost
+In properties go to Collection and edit Production > Default >ProductionResourcesNeeded
+Map (500) 300
+Movement:
+In properties go to Collection and edit MouvementHandler > Default
+MaxSpeed (1050) changed to 2000
+VitesseCombat (1050) changed to 2000
+Hitpoints
+In properties go to Collection and edit Damage>Default
+MaxDamages (11) 15
+MaxHPForHUD (11) 15
+Vanguard
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Specter which is 2280, 26265, 26266, 26267
+Cost
+In properties go to Collection and edit Production > Default >ProductionResourcesNeeded
+Map (600) 400
+Movement:
+In properties go to Collection and edit MouvementHandler > Default
+MaxSpeed (1050) changed to 2000
+VitesseCombat (1050) changed to 2000
+Hitpoints
+In properties go to Collection and edit Damage>Default
+MaxDamages (11) 15
+MaxHPForHUD (11) 15
+LOSAT
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for LOSAT which is 502, 503, 6377, 26228
+Firepower:
+WeaponManager > Default > TurretDescriptorList > 709> MountedWeaponDescriptorList > 799 > Ammunition (Rince and repeat with all the other ones)
+Physical Damage (20)30
+TempEntreDeuxSalves (8)10
+Vextra
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Vextra which is 26269, 26270
+Movement:
+In properties go to Collection and edit MouvementHandler > Default
+MaxSpeed (4200) changed to 7000
+VitesseCombat (4200) changed to 7000
+SpeedBonusOnRoad(1.5)1
+UseRoadIP(True)False
+CGS
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for CGS which is 26242, 26244
+Firepower:
+Flamethrower
+WeaponManager > Default > TurretDescriptorList > 33215 > MountedWeaponDescriptorList > 35670 > Ammunition
+TempEntreDeuxFx (0.1)0.2
+TempEntreDeuxSalves (4)0.2
+NbTirParSalves (15)1
+AfichageMunitionParSalve (20)1
+Scorpio
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Scorpio which is 504, 505, 25943, 26180
+Firepower:
+Flamethrower
+WeaponManager > Default > TurretDescriptorList > numbers> MountedWeaponDescriptorList > numbers > Ammunition
+TempEntreDeuxSalves (7)5
+Smoke
+PorteMinimale(5600)1000
+Hitpoints
+Damage(7)10
+Koalitsiya
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Koalitsiya which is 26211, 26212
+Movement:
+In properties go to Collection and edit MouvementHandler > Default
+MaxSpeed (980) changed to 2000
+VitesseCombat (980) changed to 2000
+SpeedBonusOnRoad (1.5) changed to 1
+MaxAcceleration changed to 2000
+MaxDeceleration changed to 2000
+UseRoadIFP (True) Now is false
+Hitpoints
+In properties go to Collection and edit Damage>Default
+MaxDamages (50) 180
+MaxHPForHUD (50) 180
+Firepower unupgraded:
+Long range artillery
+In properties go to Collection and edit WeaponManager > Default > TurretDescriptorList > 32872 > MountedWeaponDescriptorList > 35329 > Ammunition
+Physical Damages (18) 7
+TempEntreDeuxSalves (12) 6
+NbTirParSalves (2)
+AfichageMunitionParSalve (2)
+NbrProjectilesSimultanes (1) 2
+TempsDeVisee (4) 2
+PorteeMaximale (42000)
+PorteeMinimale (14000)
+RadiusSplashPhysicalDamages (2800) 7500
+Firepower upgraded:
+Assault cannon
+Instance 26212. In properties go to Collection and edit WeaponManager > Default > TurretDescriptorList > 32882 > MountedWeaponDescriptor > 35345 > Ammunition
+Physical Damages (7)
+TempEntreDeuxSalves (12) 6
+NbrProjectilesSimultanes (1) 2
+Short range artillery after assault cannon upgrade
+Instance 26212. In properties go to Collection and edit WeaponManager > Default > TurretDescriptorList > 32882 > MountedWeaponDescriptor > 35346 > Ammunition
+Physical Damages (18)
+TempEntreDeuxSalves (12) 6
+NbTirParSalves (2)
+AfichageMunitionParSalve (2)
+NbrProjectilesSimultanes (1) 2
+TempsDeVisee (4) 2
+PorteeMaximale (14000)
+RadiusSplashPhysicalDamages (2800) 2000
+Long range artillery after assault cannon upgrade
+Go to Instance 26212.
+In properties go to Collection and edit WeaponManager > Default > TurretDescriptorList > 32872 > MountedWeaponDescriptor > 35346 > Ammunition
+Physical Damages (18)
+TempEntreDeuxSalves (12) 6
+NbTirParSalves (2)
+AfichageMunitionParSalve (2)
+NbrProjectilesSimultanes (1) 2
+TempsDeVisee (4) 2
+PorteeMaximale (42000)
+PorteeMinimale (14000)
+RadiusSplashPhysicalDamages (2800) 7000
+Smoke:
+In properties go to Collection and edit WeaponManager > Default > TurretDescriptorList > 32872 > MountedWeaponDescriptorList > 35330 > Ammunition
+PorteeMinimale (14000) 1400
+DispersionAtMinRange (2100) 1500
+DispersionAtMaxRange (2100) 2500
+TempEntreDeuxSalves (12)
+TempsDeVisee (4) 2
+Cost
+You will need to visit both 26211 and 26212
+In properties go to Collection and edit Production > Default >ProductionResourcesNeeded
+Map (4000) 10000
+
+Comanche
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Comanche which is 26304
+Hitpoints:
+In properties go to Collection and edit Damage > Default:
+MaxDamages (10) 15
+MaxHPForHUD (10) 15
+Firepower:
+Improving the autocannon
+In properties go to Collection and edit WeaponManager > Default > TurretDescriptorList > 33786 > MountedWeaponDescriptorList
+You need to edit both 36156 and 36157 in Ammunition
+Physical Damages (1) 0.5
+TempsEntreDeuxTirs (0.2) 0.1
+TempsEntreDeuxFx (0.2) 0.1
+TempEntreDeuxSalves (4) 1
+PorteeMaximale/TBA (7000) 12000
+Improving the rocket pods
+In properties go to Collection and edit WeaponManager > Default > TurretDescriptorList > 33787 > MountedWeaponDescriptorList > 36158 > Ammunition
+PorteeMaximale (11200) 12000
+Cost
+You will need to visit both 26303 and 26304
+In properties go to Collection and edit Production > Default >ProductionResourcesNeeded
+Map (1500) 1750
+The comanche has been reworked to become more resistant and responsive
+•	Hitpoints increased in 50%
+•	Autocannon damage halved
+•	Autocannon rate of fire improved in 100%
+•	Autocannon reload time reduced to 1 second
+•	Weaponry range equalized, the autocannon now has 71% more range and the rocket pods 7% more range
+•	Cost increased in 250 credits to reflect changes
+Berkut
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Berkut which is 4459, 4460, 6233, 26322
+MouvementManager > Default
+MaxSpeed (21000): 25000
+Speed (21000): 25000
+Attitude (7000) 9000
+IgnoreBattlefieldOrders(True)False
+X-32
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for X-32 which is 26323 and 26324
+In properties go to Collection and edit MouvementManager > Default
+MaxSpeed (10080): 25000
+Speed (10080): 25000
+ScannerConfiguration>Optical Strenght (10)100/Optical Strenght Attitude (10)100
+Valkyrie
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for the Valkyrie which is 26325 and 26326
+Hitpoints
+In properties go to Collection and edit Damage > Default
+MaxDamages (8) 25
+MaxHPForHUD (8) 25
+Cost
+Production>Default>ProductionResourcesNeeded(5000)9000
+Speed
+Speed (21000)25000
+MaxSpeed(21000)25000
+MovementManager> Default > Altitude(7000)9000
+Superhind
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for the Superhind which are 4461 (up2), 4462 (up3), 6449 (up1) and 26297 (vanilla)
+Speed
+We are going to upgrade the speed upgrade of the Superhind, so we work with 4462
+In properties go to Collection and edit MouvementManager > Default
+Maxspeed (11200): 12500
+Maxacceleration (840) 1500
+Maxdeceleration (840) 1500
+•	Speed increased in 12% and acceleration/desacceleration factor in 79%
+Otomatic
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Specter which is 26236
+Firepower
+In properties go to Collection and edit WeaponManager > Default > TurretDescriptorList > 33136 > MountedWeaponDescriptorList > 35600, 35601, 35602 >Ammunition
+TempEntreDeuxTirs (0.6) 0.3
+TempEntreDeuxFx (0.6) 0.3
+TempEntreDeuxSalves (0.6) 0.3
+Physical Damage (all reduced by 20%)
+•	Attack damage reduced by 20%
+•	Rate of attack delay and reloading time halved
+Specter
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Specter which is 25828 (don’t use 25742)
+Firepower (autocannon)
+In properties go to Collection and edit WeaponManager > Default > TurretDescriptorList > 25862 > MountedWeaponDescriptorList > 25873 (ground) and 25874 (air)> Ammunition
+PorteMaximale/TBA (6300) 11200
+TempEntreDeuxSalves (4) 1
+Physical Damages (1) 2
+TempsEntreDeuxTirs (0.2) 0.4
+TempsEntreDeuxFx (0.2) 0.4
+Movement:
+In properties go to Collection and edit MouvementHandler > Default
+MaxSpeed (2380) changed to 3570 (50% faster)
+VitesseCombat (2380) changed to 3570 (50% faster)
+SpeedBonusOnRoad (1.5) changed to 1
+MaxAcceleration (1050) changed to 5000
+MaxDeceleration (4760) changed to 5000
+UseRoadIFP (True) Now is false
+Hitpoints:
+In properties go to Collection and edit Damage > Default:
+MaxDamages (25) 40
+MaxHPForHUD (25) 40
+The Specter has been modified to work better for hit and run attacks and light unit kills while becoming tougher to kill:
+•	Autocannon rate of fire halved
+•	Autocannon damage doubled
+•	Autocannon reload time reduced to 1 second
+•	Autocannon range improved in 77%
+•	Speed increased by 50% although the Specter cannot longer use roads
+•	Hitpoints increased from 25 to 40
+•	Cost increased from 2500 to 3000
+BREM-80U
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for BREM which is 26186
+In properties go to Collection and edit MouvementHandler > Default
+Movement:
+MaxSpeed (1680) changed to 2520 (50% faster)
+UseRoadIFP (True) Now is false
+•	Speed increased by 50% although the BREM cannot longer use roads
+Superweapon
+Thor Control Center attack profile changed
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance of Thor (Odin, in the file is Odin) 26350, 34324
+Firepower
+In properties go to Collection and edit WeaponManager > Default > TurretDescriptorList > 34333 > MountedWeaponDescriptorList > 36859 > Ammunition:
+PhysicalDamages (100) 50
+RadiusSplashPhysicalDamages (5600) 5000
+RodOfGod Thor Missile 41558
+MovementHandler
+MaxSpeed(28000)300000
+AscendatPhaseConf(14000)300000
+DescendantPhaseConf(14000)300000
+
+Cost
+In properties go to Collection of 26350 and 34324 and edit both Production and Construction > Default > ResourcesNeeded
+Map (5500) 10000
+•	Attack Damage doubled
+•	Area of effect reduced to 71%
+•	Cost increased
+USA
+Units
+Most of the work has been done to improve the survivability of USA forces.
+Refinery
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Refinery which is 26395, 26407, 34874, 35016
+M992
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for M109 which is 26193, 26193, 26197, 26198, 26199, 26200, 26201
+Cost
+In properties go to Collection and edit
+Production > Default >ProductionResourcesNeeded > (500) 350
+ACCE
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for ACCE and ACCE upgraded which are 26181 and 26182 respectively
+Hitpoints
+In properties go to Collection and edit Damage > Default:
+Vanilla ACCE
+MaxDamages (10) 12
+MaxHPForHUD (10) 12
+ACCE upgraded
+MaxDamages (20) 25
+MaxHPForHUD (20) 25
+Transport
+In properties go to Collection and edit Damage > Transporter:
+NbSeatsAvailable (8) 10
+Firepower (ACCE Upgraded)
+In properties go to Collection and edit WeaponManager > Default > TurretDescriptorList > 32584 > MountedWeaponDescriptorList > 35079 > Ammunition
+TempEntreDeuxSalves (8) 1
+TempsEntreDeuxTirs (0.4) 0.2
+TempsEntreDeuxFx (0.4) 0.2
+Physical Damages (2) 1
+•	ACCE hitpoints improved in 20%
+•	ACCE TUSK hitpoints improved in 25%
+•	Damage halved, rate of fire doubled, reload time decreased to 1 second
+Marine
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for marine and marine upgraded which are 26229 and 26230 
+Hitpoints
+In properties go to Collection and edit Damage > Default:
+Vanilla Marine
+MaxDamages (6) 8
+MaxHPForHUD (6) 8
+Upgraded Marine
+MaxDamages (8) 11
+MaxHPForHUD (8) 11
+Cost
+In properties go to Collection and edit
+Production > Default >ProductionResourcesNeeded > (200) 75
+Speed
+In properties go to Collection and edit MovementHandler > Default, you can use any of the two instances:
+MaxSpeed (1120) 2000
+VitessCombat (1120) 2000
+•	Marine HP increased in 33%
+Sniper
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for sniper and sniper upgraded which are 26245 and 26246 respectively
+Cost
+In properties go to Collection and edit
+Production > Default >ProductionResourcesNeeded > (800) 350
+Speed
+In properties go to Collection and edit MovementHandler > Default, you can use any of the two instances:
+MaxSpeed (980) 2200
+VitessCombat (980) 2200
+•	Speed improved in 100%
+Deltas
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for delta and delta upgraded which are 26190 and 26191 respectively
+Hitpoints
+In properties go to Collection and edit Damage > Default:
+Vanilla Delta
+MaxDamages (12) 16
+MaxHPForHUD (12) 16
+Upgraded Delta
+MaxDamages (12) 16
+MaxHPForHUD (12) 16
+Speed
+In properties go to Collection and edit MovementHandler > Default, you can use any of the two instances:
+MaxSpeed (1120) 2200
+VitessCombat (1120) 2200
+Cost
+In properties go to Collection and edit
+Production > Default >ProductionResourcesNeeded > (500) 300
+•	Delta HP increased in 33%
+Mortar
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Mortar which are 26232, 26233
+Speed
+In properties go to Collection and edit MovementHandler > Default, you can use any of the two instances:
+MaxSpeed (1120) 2000
+VitessCombat (1120) 2000
+Cost
+In properties go to Collection and edit
+Production > Default >ProductionResourcesNeeded > (700) 350
+Stinger soldier
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Stinger which are 26248, 26249
+Speed
+In properties go to Collection and edit MovementHandler > Default, you can use any of the two instances:
+MaxSpeed (1120) 2000
+VitessCombat (1120) 2000
+Cost
+In properties go to Collection and edit
+Production > Default >ProductionResourcesNeeded > (200) 100
+Javelin soldier
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Javelin which are 26205, 26206
+Speed
+In properties go to Collection and edit MovementHandler > Default, you can use any of the two instances:
+MaxSpeed (1120) 2000
+VitessCombat (1120) 2000
+Cost
+In properties go to Collection and edit
+Production > Default >ProductionResourcesNeeded > (200) 100
+Humvee
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Humvees which are 16583, 16658 and 16724 respectively
+Hitpoints
+In properties go to Collection and edit Damage > Default:
+MaxDamages (8) 10
+MaxHPForHUD (8) 10
+•	Hunvees now have 25% additional hitpoints
+Thunderbolt
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Thunderbolts which are 26261 and 26262 respectively
+Hitpoints
+In properties go to Collection and edit Damage > Default:
+Default
+MaxDamages (10) 12
+MaxHPForHUD (10) 12
+Upgraded
+MaxDamages (20) 25
+MaxHPForHUD (20) 25
+•	Thunderbolt now have 20% additional hitpoints
+•	TUSK 1 Thunderbolt now has 25% additional hitpoints
+ATGM Stryker
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Thunderbolts which are 15325, 15326, 15694, 26250 respectively
+Hitpoints
+In properties go to Collection and edit Damage > Default:
+Default
+MaxDamages (10) 12
+MaxHPForHUD (10) 12
+Upgraded
+MaxDamages (20) 25
+MaxHPForHUD (20) 25
+•	Thunderbolt now have 20% additional hitpoints
+•	TUSK 1 Thunderbolt now has 25% additional hitpoints
+FCS Mortar
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for FCSs which are 15692, 15693, 17169, 26192 (observation, linked to Thunderbolt of ACCE profiles?):
+Hitpoints
+In properties go to Collection and edit Damage > Default:
+Default
+MaxDamages (10) 12
+MaxHPForHUD (10) 12
+Upgraded
+MaxDamages (20) 25
+MaxHPForHUD (20) 25
+•	Thunderbolt now have 20% additional hitpoints
+•	TUSK 1 Thunderbolt now has 25% additional hitpoints
+Apache Guardian
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Guardians which are 15323, 15324, 17041, 26290:
+Firepower
+Autocannon
+Properties > Collection > WeaponManager > Default > TurretDescriptorList > 15456 > MountedWeaponDescriptorList > 15511 > Ammunition
+TempEntreDeuxSalves (2) 1
+•	Autocannon reload time reduced to 1 second
+HIMARS
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for the HIMARS Missile which is 40781
+Missile speed
+In properties go to Collection and edit MovementHandler > Default, you can use any of the two instances:
+MaxSpeed (14000) 18000
+•	Speed improved in 50%
+M1 Builder
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for the M1 Builder which is 26226
+Hitpoints
+In properties go to Collection and edit Damage > Default
+MaxDamages (4) 6
+MaxHPForHUD (4) 6
+•	Hitpoints improved in 50%
+M1 Repairer
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for M1 which is 26225
+In properties go to Collection and edit MouvementHandler > Default
+Movement:
+MaxSpeed (2030) changed to 3045 (50% faster)
+UseRoadIFP (True) Now is false
+•	Speed increased by 50% although the M1 cannot longer use roads
+MH6 SOAR Little Bird
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for M1 which is 26296
+Hitpoints
+In properties go to Collection and edit Damage > Default
+MaxDamages (10) 20
+MaxHPForHUD (10) 20
+•	Hitpoints doubled
+Avenger
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for the Avenger which is 26310 and 26311
+Scale
+In properties go to Collection and edit ApparenceModel 
+Scale (1) 0.5
+•	Avenger model size reduced to 50%
+MouvementManager > Default
+MaxSpeed (10080): 18000
+Speed (10080): 18000
+IgnoreBattlefieldOrders (True) False
+Raptor
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for the Avenger which is 26314, 26315 and 26316
+Speed
+MouvementManager > Default
+MaxSpeed (21000): 25000
+Speed (21000): 25000
+IgnoreBattlefieldOrders (True) False
+B2
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for the B2 which is 26312 and 26313
+Hitpoints
+In properties go to Collection and edit Damage > Default
+MaxDamages (20) 65
+MaxHPForHUD (20) 65
+Cost
+Production>Default>ProductionResourcesNeeded(6000)10000
+Speed
+MovementManager> Default > Altitude(7000)9000
+M1203 NLOS
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for NLOS which is 17163, 17164 25623, 26219
+Firepower
+Properties > Collection > WeaponManager > Default > TurretDescriptorList > 17252 > MountedWeaponDescriptorList > 17281 > Ammunition
+Properties > Collection > WeaponManager > Default > TurretDescriptorList > 17261 > MountedWeaponDescriptorList > 17292 > Ammunition
+Properties > Collection > WeaponManager > Default > TurretDescriptorList > 25656 > MountedWeaponDescriptorList > 25666 > Ammunition
+Properties > Collection > WeaponManager > Default > TurretDescriptorList > 32954 > MountedWeaponDescriptorList > 35419 > Ammunition
+PhysicalDamages (15) 5
+TempsEntreDeuxSalves (12) 4 (upgraded)
+TempsEntreDeuxSalves (6) 2 (vanilla)
+Speed
+MouvementManager > Default
+MaxSpeed (1330) 1995
+VitesseCombat (1330) 1995
+SpeedBonusOnRoad (1.5) 1
+UseRoadIP (True) False
+•	Attack damage reduced to 33%
+•	Reloading rate reduced to 33%
+•	Speed increased by 50% although the NLOS cannot longer use roads
+M1A2
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for M1A2 which is 26222, 26223, 26224 (TUSK 1 hp linked to Terminator, TUSK 2 hp linked to Koalitsijya)
+Firepower
+Properties > Collection > WeaponManager > Default > TurretDescriptorList > many numbers > MountedWeaponDescriptorList > many numbers > Ammunition
+SEP
+PhysicalDamages (4) 30
+PhysicalDamages (2) 20
+PhysicalDamages (4) 30
+PhysicalDamages (3) 20
+TUSK1
+PhysicalDamages (5) 40
+PhysicalDamages (3) 30
+PhysicalDamages (5) 40
+PhysicalDamages (4) 30
+TUSK2
+PhysicalDamages (6) 60
+PhysicalDamages (4) 40
+PhysicalDamages (6) 60
+PhysicalDamages (5) 40
+SplashRadiusPhysicsDamages (700)1000
+Hitpoints
+In properties go to Collection and edit Damage > Default
+MaxDamages (30) 50
+MaxHPForHUD (30) 50
+MaxDamages (40) 60
+MaxHPForHUD (40) 60
+MaxDamages (50) 180
+MaxHPForHUD (50) 180
+Speed
+MouvementManager > Default
+MaxSpeed (1330) 2520
+VitesseCombat (1330) 2520
+MaxSpeed (1330) 3045
+VitesseCombat (1330) 3045
+MaxSpeed (1330) 3570
+VitesseCombat (1330) 3570
+SpeedBonusOnRoad (1.5) 1
+UseRoadIP (True) False
+Cost
+Production>Default>ProductionResourcesNeeded(1800)8000
+•	Hitpoints increased by 20%
+•	Speed increased by 50% although the M1A2 cannot longer use roads
+Superweapon
+PeaceKeeper Nuclear Missile Silo
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance of the nuke which are 26398, 16126
+Firepower
+In properties go to Collection and edit WeaponManager > Default > TurretDescriptorList > 34915/ 16321 > MountedWeaponDescriptorList > 37639/ 16340 > Ammunition:
+Vanilla
+PhysicalDamages (150) 100
+RadiusSplashPhysicalDamages (8400) 16800
+Upgraded
+PhysicalDamages (200) 150
+RadiusSplashPhysicalDamages (11200) 22400
+•	Vanilla missile reduced to 66%, Upgraded reduced to 75%
+•	Area of effect doubled
+Chimera
+Units
+Sentinel Turret
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Sentinel Turret which is 6710, 6711, 6842,6962
+HQ
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for HQ which is 6985, 6990, 7928, 8015
+Outpost
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for outpost which is 6986, 6987, 6988, 6989, 6991, 8032
+Refinery
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Refinery which is 6992, 8044, 10880, 12697, 12698, 12751, 13395, 14252, 14263, 14299
+Cost
+In properties go to Collection and edit
+Construction > Default >ProductionResourcesNeeded > (1600) 1000
+Production > Default >ProductionResourcesNeeded > (1600) 1000
+Crusher
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Refinery which is 8049, 8050, 13544, 13545, 26213
+Cost
+In properties go to Collection and edit
+Production > Default >ProductionResourcesNeeded > (600) 400
+Felin
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Felin which is 8005, 8006
+Hitpoints
+In properties go to Collection and edit Damage > Default
+MaxDamages (7) 9
+MaxHPForHUD (7) 9
+MaxDamages (10) 13
+MaxHPForHUD (10) 13
+Speed
+MouvementManager > Default
+MaxSpeed (1400) 2200
+VitesseCombat (1400) 2200
+Cost
+Production > Default >ProductionResourcesNeeded > (250) 100
+•	Hitpoints improved in 25%
+•	Speed improved in 25%
+Heavy SAS Sniper
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Heavy SAS Sniper which is 8068
+In properties go to Collection and edit Damage > Default
+MaxDamages (4) 7
+MaxHPForHUD (4) 7
+Speed
+MouvementManager > Default
+MaxSpeed (1400) 2200
+VitesseCombat (1400) 2200
+Cost
+Production > Default >ProductionResourcesNeeded > (650) 325
+•	Hitpoints improved in 75%
+Exo-soldier
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Exo-soldier which is 8070
+Improving weaponry
+Firepower
+In properties go to Collection and edit WeaponManager > Default > TurretDescriptorList > 11049 > MountedWeaponDescriptorList > 11834/11835/ 11836/ 11837 > Ammunition:
+TempsEntreDeuxSalves (1) 0.5
+TempsEntreDeuxFx (1) 0.5
+Cost
+Production > Default >ProductionResourcesNeeded > (800) 400
+•	Rate of fire doubled
+DENEL Y3 Grenadiers
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Grenadier which is 8069 and 14654
+Speed
+MouvementManager > Default
+MaxSpeed (840) 2000
+VitesseCombat (840) 2000
+Firepower
+In properties go to Collection and edit WeaponManager > Default > TurretDescriptorList > 11039 > MountedWeaponDescriptorList > 11813/ 11814/ 11815/ 11816 > Ammunition:
+TempsEntreDeuxSalves (8/12/8/12/20) 1
+TempsEntreDeuxSalves (1/1/1/1/1) 0.5
+Cost
+Production > Default >ProductionResourcesNeeded > (800) 400
+•	Rate of fire doubled
+
+•	Grenadier reloading time reduced to 1 second
+•	Grenadier attack damaged halved
+
+Pantsir
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Pantsir which is 8110, 8111
+Firepower
+In properties go to Collection and edit WeaponManager > Default > TurretDescriptorList > check them > MountedWeaponDescriptorList > check them> Ammunition:
+TempsEntreDeuxTirs (0.2/0.4) 0.1/0.4
+TempsEntreDeuxFx (0.2/0.4) 0.1/0.4
+Puma
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Puma which is 8109, 8112, 8113, 8114
+Autocannon
+In properties go to Collection and edit WeaponManager > Default > TurretDescriptorList > check them > MountedWeaponDescriptorList > check them> Ammunition:
+TempsEntreDeuxSalves (3) 0.4
+Autocannon
+In properties go to Collection and edit WeaponManager > Default > TurretDescriptorList > check them > MountedWeaponDescriptorList > check them> Ammunition:
+TempsEntreDeuxSalves (6) 5
+Rhino
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Rhino which is 8086
+Firepower
+In properties go to Collection and edit WeaponManager > Default > TurretDescriptorList > check them > MountedWeaponDescriptorList > check them> Ammunition:
+RadiusSplashPhysicalDamages (1400) 3000
+Namer
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Namer which is 8087, 8090, 8091, 8092
+Hitpoints
+In properties go to Collection and edit Damage > Default
+MaxDamages (40) 70
+MaxHPForHUD (40) 70
+Metal Storm
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Metal Storm which is 8088
+Cost
+In properties go to Collection and edit Production > Default >ProductionResourcesNeeded
+Map (800) 500
+MouvementManager > Default
+MaxSpeed (890) 2500
+VitesseCombat (890) 2500
+RoadBonus(1.5)1
+UseRoadsIP(True)False
+Terminator
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Terminator which is 6536, 8189, 8190, 8191, 8185 (hitpoints linked to M1A TUSK1)
+Hitpoints
+In properties go to Collection and edit Damage > Default
+MaxDamages (40) 60
+MaxHPForHUD (40) 60
+Speed
+MouvementManager > Default
+MaxSpeed (2240) 3360
+VitesseCombat (2240) 3360
+SpeedBonusOnRoad (1.5) 1
+UseRoadIP (True) False
+Cost
+In properties go to Collection and edit Production > Default >ProductionResourcesNeeded
+Map (2000) 3000
+•	Hitpoints increased by 50%
+•	Speed increased by 50% although the Terminator cannot longer use roads
+•	Cost increased by 50%
+Tigre
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Tigre which is 8131, 8133, 8134, 8135
+Firepower
+In properties go to Collection and edit WeaponManager > Default > TurretDescriptorList > 11232 > MountedWeaponDescriptorList > 12072/ 12073 > Ammunition:
+TempsEntreDeuxSalves (6) 1
+TempsEntreDeuxFx (6) 1
+Hitpoints
+In properties go to Collection and edit Damage > Default
+MaxDamages (15) 20
+MaxHPForHUD (15) 20
+•	Reloading rate reduced to 1 second
+•	Hitpoints increased by 33%
+Corax
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Corax which is 8162
+Hitpoints
+In properties go to Collection and edit Damage > Default
+MaxDamages (15) 30
+MaxHPForHUD (15) 30
+•	Hitpoints doubled 
+Speed
+MouvementManager > Default
+Speed (7000) 15000
+MaxSpeed (7000) 15000
+PAF KA
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for PAF KA which is 8163, 8164
+Speed
+MouvementManager > Default
+Speed (21000) 25000
+MaxSpeed (21000) 25000
+Neuron
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Neuron which is 8165, 8166
+Speed
+MouvementManager > Default
+Speed (7000) 15000
+MaxSpeed (7000) 15000
+
+Valor
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Tigre which is 8132, 8136, 8137 and 8138
+Firepower
+In properties go to Collection and edit WeaponManager > Default > TurretDescriptorList > 11301 > MountedWeaponDescriptorList > 12173 > Ammunition:
+TempsEntreDeuxTirs (0.4) 0.5
+TempsEntreDeuxFx (0.4) 0.5
+TempsEntreDeuxSalves (30) 0.5
+DispersionAtMinRange (1400) 350
+DispersionAtMaxRange (2800) 700
+PhysicalDamages (1) 0.5
+Hitpoints
+In properties go to Collection and edit Damage > Default
+MaxDamages (20) 40
+MaxHPForHUD (20) 40
+Cost
+In properties go to Collection and edit Production > Default >ProductionResourcesNeeded
+Map (2000) 3000
+•	Rocket rate of fire decreased by 20%
+•	Rocket rate reloading time reduced to 6.6%
+•	Rocket attack damage reduced to 50%
+•	Hitpoints increased by 100%
+Buratino
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Buratino which is 8186 (speed linked to M1 repairer )
+Speed
+MouvementManager > Default
+MaxSpeed (2030) 3045
+VitesseCombat (2030) 3045
+SpeedBonusOnRoad (1.5) 1
+UseRoadIP (True) False
+•	Speed increased by 50% although the Buratino cannot longer use roads
+Antey
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance for Antey which is 8227, 8228
+Hitpoints
+In properties go to Collection and edit Damage > Default
+MaxDamages (20) 60
+MaxHPForHUD (20) 60
+Superweapon
+Omega Blitz Artillery
+In NDF_Win.dat search for everything.ndfbin then go to TUniteDescriptor, there look for the instance of the Blitz missile which is 11547
+Speed
+Movement Handler
+MaxSpeed(14000)18000
+AscendantPhaseConfig(7000/14000)18000
+RecedingPhaseConfig(14000)18000
