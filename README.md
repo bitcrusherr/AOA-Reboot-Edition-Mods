@@ -10,4 +10,4 @@ V2 = Kane McNash
 
 V4 = ArcShade (Exstension of V2 by Kane McNash)
 
-Instllaer = Bitcrusher
+Mod Installer = Bitcrusher
