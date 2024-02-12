@@ -11,3 +11,6 @@ V2 = Kane McNash
 V4 = ArcShade (Exstension of V2 by Kane McNash)
 
 Mod Installer = Bitcrusher
+
+#
+Join discord server U9fh7Z2, for any discussion or events
